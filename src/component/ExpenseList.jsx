@@ -55,13 +55,31 @@ export const ExpenseList = () => {
                     </tbody>
                 </table>
             ) : (
-                <div className="card-container">
+                <div>
                     {Object.keys(state.expenses.reduce((acc, expense) => {
-                        acc[expense.category] = true;
+                        acc[expense.category] = true
                         return acc
-                    }, {})).map((category, i) => (
-                        <div className="card" key={i}>
+                    }, {})).map((category, index) => (
+                        <div key={index}>
                             <h3>{category}</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Montant</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {state.expenses
+                                        .filter(expense => expense.category === category)
+                                        .map((expense, index) => (
+                                            <tr key={index}>
+                                                <td>{expense.date}</td>
+                                                <td>{expense.amount} €</td>
+                                            </tr>
+                                        ))}
+                                </tbody>
+                            </table>
                             <p>Total: {getTotalByCategory(category)} €</p>
                         </div>
                     ))}

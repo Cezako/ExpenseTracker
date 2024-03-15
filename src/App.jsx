@@ -2,7 +2,7 @@ import React from 'react'
 import {ExpenseForm} from './component/ExpenseForm.jsx'
 import {CategorySelector} from './component/CategorySelector.jsx'
 import {ExpenseList} from './component/ExpenseList.jsx'
-import {categories} from './component/categories.js'
+import {categories} from './constant/categories.js'
 
 function App() {
 
