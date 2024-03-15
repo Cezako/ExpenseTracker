@@ -2,17 +2,7 @@ import React from 'react'
 import {ExpenseForm} from './component/ExpenseForm.jsx'
 import {CategorySelector} from './component/CategorySelector.jsx'
 import {ExpenseList} from './component/ExpenseList.jsx'
-
-
-const categories = [
-    "Alimentation",
-    "Logement",
-    "Transport",
-    "Divertissement",
-    "Santé",
-    "Éducation",
-    "Autres"
-]
+import {categories} from './component/categories.js'
 
 function App() {
 
